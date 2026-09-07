@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الكتب المجانية - مكتبتي الإلكترونية</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .back {
+            max-width: 1100px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #243b55;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(240px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 160px;
+            margin: 0 auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eef1f6;
+            border-radius: 10px;
+
+            font-size: 50px;
+        }
+
+        .free-badge {
+            display: inline-block;
+
+            background: #e8f5e9;
+            color: #2e7d32;
+
+            padding: 7px 13px;
+            border-radius: 20px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .book-card h3 {
+            margin: 8px 0;
+            font-size: 22px;
+        }
+
+        .book-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .book-card a {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            background: #243b55;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 22px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .book-card a:hover {
+            opacity: 0.9;
+        }
+
+        .empty {
+            background: white;
+            border-radius: 16px;
+
+            padding: 45px 20px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            margin-top: 25px;
+        }
+
+        .empty-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .empty h2 {
+            margin: 10px 0;
+        }
+
+        .empty p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        footer {
+            background: #243b55;
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            🆓 الكتب المجانية
+        </h1>
+
+        <p>
+            كتب وملازم مجانية متاحة للجميع
+        </p>
+
+    </header>
+
+
+    <div class="back">
+
+        <a href="index.html">
+            ← العودة إلى الرئيسية
+        </a>
+
+    </div>
+
+
+    <main>
+
+
+        <h2 class="page-title">
+            📚 المحتوى المجاني
+        </h2>
+
+
+        <!--
+            الكتب المجانية ستتم إضافتها هنا لاحقًا.
+        -->
+
+
+        <div class="books">
+
+
+            <div class="book-card">
+
+                <div class="book-cover">
+                    📖
+                </div>
+
+                <span class="free-badge">
+                    🆓 مجاني
+                </span>
+
+                <h3>
+                    حكمت اليوم
+                </h3>
+
+                <p>
+                    تأليف: أيهم حيدر حاكم
+                </p>
+
+                <p>
+                    كتاب يضم مجموعة من الحكم
+                    والأفكار والعبارات للتأمل والاستفادة
+                    في الحياة اليومية.
+                </p>
+
+                <a href="book12.html">
+                    📖 عرض الكتاب
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <footer>
+
+        © 2026 مكتبتي الإلكترونية
+
+    </footer>
+
+
+</body>
+
+</html>

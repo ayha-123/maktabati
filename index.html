@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -8,6 +9,7 @@
     <title>مكتبتي الإلكترونية</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -124,6 +126,7 @@
         }
 
         @media (max-width: 600px) {
+
             .search {
                 flex-direction: column;
             }
@@ -135,16 +138,25 @@
             header h1 {
                 font-size: 27px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <header>
+
         <h1>📚 مكتبتي الإلكترونية</h1>
-        <p>كتب وملازم دراسية في مكان واحد</p>
+
+        <p>
+            كتب وملازم دراسية في مكان واحد
+        </p>
+
     </header>
+
 
     <div class="search">
 
@@ -160,64 +172,86 @@
 
     </div>
 
+
     <main>
 
         <h2>أقسام المكتبة</h2>
 
+
         <div class="categories">
 
+
             <!-- الكتب -->
+
             <div class="card">
 
-                <div class="icon">📚</div>
+                <div class="icon">
+                    📚
+                </div>
 
-                <h3>الكتب</h3>
+                <h3>
+                    الكتب
+                </h3>
 
                 <p>
                     مجموعة من الكتب المتنوعة
                 </p>
 
                 <a href="books.html">
+
                     <button>
                         تصفح الكتب
                     </button>
+
                 </a>
 
             </div>
 
 
             <!-- الملازم الدراسية -->
+
             <div class="card">
 
-    <div class="icon">🎓</div>
+                <div class="icon">
+                    🎓
+                </div>
 
-    <h3>الملازم الدراسية</h3>
+                <h3>
+                    الملازم الدراسية
+                </h3>
 
-    <p>
-        ملازم لمختلف المراحل الدراسية
-    </p>
+                <p>
+                    ملازم لمختلف المراحل الدراسية
+                </p>
 
-    <a href="handouts.html">
-        <button>
-            تصفح الملازم
-        </button>
-    </a>
+                <a href="handouts.html">
 
-</div>
+                    <button>
+                        تصفح الملازم
+                    </button>
+
+                </a>
+
+            </div>
 
 
             <!-- الكتب المجانية -->
+
             <div class="card">
 
-                <div class="icon">🆓</div>
+                <div class="icon">
+                    🆓
+                </div>
 
-                <h3>الكتب المجانية</h3>
+                <h3>
+                    الكتب المجانية
+                </h3>
 
                 <p>
                     كتب متاحة للقراءة والتحميل مجانًا
                 </p>
 
-                <button>
+                <button onclick="window.location.href='free.html'">
                     تصفح المجاني
                 </button>
 
@@ -225,23 +259,31 @@
 
 
             <!-- الكتب المدفوعة -->
+
             <div class="card">
 
-                <div class="icon">💰</div>
+                <div class="icon">
+                    💰
+                </div>
 
-                <h3>الكتب المدفوعة</h3>
+                <h3>
+                    الكتب المدفوعة
+                </h3>
 
                 <p>
-                    كتب مميزة متاحة للشراء
+                    كتب وملازم مميزة متاحة للشراء
                 </p>
 
                 <a href="paid.html">
+
                     <button>
                         تصفح المدفوع
                     </button>
+
                 </a>
 
             </div>
+
 
         </div>
 
@@ -249,7 +291,9 @@
 
 
     <footer>
+
         © 2026 مكتبتي الإلكترونية
+
     </footer>
 
 
@@ -263,6 +307,7 @@
                 .value
                 .trim()
                 .toLowerCase();
+
 
             if (
                 searchText.includes("حكمت") ||
@@ -284,3 +329,4 @@
 </body>
 
 </html>
+```

@@ -1,9 +1,9 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wi<!dth=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>الملازم الدراسية - مكتبتي الإلكترونية</title>
 
@@ -60,29 +60,68 @@ DOCTYPE html>
             margin: 25px 0;
         }
 
-        .notice {
-            background: white;
-            padding: 40px 25px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
+        .handouts {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(240px, 1fr)
+            );
+            gap: 20px;
         }
 
-        .notice .icon {
+        .handout-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .handout-icon {
             font-size: 55px;
             margin-bottom: 15px;
         }
 
-        .notice h3 {
+        .handout-card h3 {
             margin: 10px 0;
-            font-size: 23px;
+            font-size: 22px;
         }
 
-        .notice p {
+        .handout-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .coming {
+            display: inline-block;
+            margin-top: 10px;
+            background: #eef1f6;
+            color: #555;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .empty {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        .empty .icon {
+            font-size: 60px;
+        }
+
+        .empty h3 {
+            margin: 15px 0 10px;
+        }
+
+        .empty p {
             color: #666;
             line-height: 1.8;
-            margin: 0;
         }
 
         footer {
@@ -99,23 +138,27 @@ DOCTYPE html>
                 font-size: 27px;
             }
 
-            .notice {
-                padding: 30px 20px;
+            main {
+                padding: 15px;
             }
 
         }
 
     </style>
+
 </head>
 
 <body>
 
+
     <header>
 
-        <h1>🎓 الملازم الدراسية</h1>
+        <h1>
+            🎓 الملازم الدراسية
+        </h1>
 
         <p>
-            ملازم دراسية لمختلف المراحل الدراسية
+            ملازم دراسية لمختلف المراحل والتخصصات
         </p>
 
     </header>
@@ -132,22 +175,51 @@ DOCTYPE html>
 
     <main>
 
-        <h2>📚 الملازم الدراسية</h2>
+        <h2>
+            📚 الملازم المتوفرة
+        </h2>
 
 
-        <div class="notice">
+        <div class="handouts">
+
+            <div class="handout-card">
+
+                <div class="handout-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    ملازم دراسية
+                </h3>
+
+                <p>
+                    ستتم إضافة الملازم الدراسية
+                    هنا قريبًا.
+                </p>
+
+                <span class="coming">
+                    قريبًا
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="empty">
 
             <div class="icon">
-                🎓
+                📖
             </div>
 
             <h3>
-                الملازم الدراسية
+                المكتبة قيد الإضافة
             </h3>
 
             <p>
-                ستظهر هنا الملازم الدراسية لمختلف المراحل
-                والتخصصات بعد إضافتها إلى المكتبة.
+                سيتم إضافة الملازم الدراسية
+                وتنظيمها حسب المرحلة والتخصص
+                عند تجهيز المحتوى.
             </p>
 
         </div>
@@ -160,6 +232,7 @@ DOCTYPE html>
         © 2026 مكتبتي الإلكترونية
 
     </footer>
+
 
 </body>
 
