@@ -1,10 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>مكتبتي الإلكترونية</title>
 
@@ -65,6 +67,10 @@
             cursor: pointer;
         }
 
+        .search button:hover {
+            opacity: 0.9;
+        }
+
         main {
             max-width: 1100px;
             margin: auto;
@@ -78,7 +84,8 @@
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
@@ -87,7 +94,8 @@
             padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
         }
 
         .card .icon {
@@ -115,6 +123,10 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 15px;
+        }
+
+        .card button:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -145,11 +157,15 @@
 
 </head>
 
+
 <body>
+
 
     <header>
 
-        <h1>📚 مكتبتي الإلكترونية</h1>
+        <h1>
+            📚 مكتبتي الإلكترونية
+        </h1>
 
         <p>
             كتب وملازم دراسية في مكان واحد
@@ -158,12 +174,15 @@
     </header>
 
 
+    <!-- البحث -->
+
     <div class="search">
 
         <input
             type="text"
             id="searchInput"
-            placeholder="🔍 اكتب اسم الكتاب..."
+            placeholder="🔍 ابحث عن كتاب أو مؤلف أو قسم..."
+            onkeydown="checkEnter(event)"
         >
 
         <button onclick="searchBook()">
@@ -175,7 +194,9 @@
 
     <main>
 
-        <h2>أقسام المكتبة</h2>
+        <h2>
+            أقسام المكتبة
+        </h2>
 
 
         <div class="categories">
@@ -251,9 +272,13 @@
                     كتب متاحة للقراءة والتحميل مجانًا
                 </p>
 
-                <button onclick="window.location.href='free.html'">
-                    تصفح المجاني
-                </button>
+                <a href="free.html">
+
+                    <button>
+                        تصفح المجاني
+                    </button>
+
+                </a>
 
             </div>
 
@@ -309,16 +334,141 @@
                 .toLowerCase();
 
 
+            if (searchText === "") {
+
+                alert(
+                    "يرجى كتابة شيء للبحث عنه 🔍"
+                );
+
+                return;
+
+            }
+
+
+            /* كتاب حكمت اليوم */
+
             if (
+
+                searchText.includes("حكمت اليوم") ||
+
                 searchText.includes("حكمت") ||
-                searchText.includes("اليوم")
+
+                searchText.includes("اليوم") ||
+
+                searchText.includes("أيهم") ||
+
+                searchText.includes("ايهم") ||
+
+                searchText.includes("حاكم")
+
             ) {
 
                 window.location.href = "book12.html";
 
-            } else {
+                return;
 
-                alert("لم نجد هذا الكتاب في المكتبة");
+            }
+
+
+            /* قسم الكتب */
+
+            if (
+
+                searchText.includes("كتب") ||
+
+                searchText.includes("كتاب")
+
+            ) {
+
+                window.location.href = "books.html";
+
+                return;
+
+            }
+
+
+            /* الملازم الدراسية */
+
+            if (
+
+                searchText.includes("ملازم") ||
+
+                searchText.includes("ملزمة") ||
+
+                searchText.includes("دراسة") ||
+
+                searchText.includes("دراسية")
+
+            ) {
+
+                window.location.href =
+                    "handouts.html";
+
+                return;
+
+            }
+
+
+            /* المحتوى المجاني */
+
+            if (
+
+                searchText.includes("مجاني") ||
+
+                searchText.includes("مجانية") ||
+
+                searchText.includes("مجاناً") ||
+
+                searchText.includes("مجانا")
+
+            ) {
+
+                window.location.href =
+                    "free.html";
+
+                return;
+
+            }
+
+
+            /* المحتوى المدفوع */
+
+            if (
+
+                searchText.includes("مدفوع") ||
+
+                searchText.includes("مدفوعة") ||
+
+                searchText.includes("شراء") ||
+
+                searchText.includes("شراء الكتب")
+
+            ) {
+
+                window.location.href =
+                    "paid.html";
+
+                return;
+
+            }
+
+
+            /* لا توجد نتائج */
+
+            alert(
+                "🔍 لم نجد نتائج مطابقة لبحثك."
+            );
+
+        }
+
+
+        /* البحث عند الضغط على Enter */
+
+        function checkEnter(event) {
+
+            if (event.key === "Enter") {
+
+                searchBook();
 
             }
 
@@ -326,7 +476,7 @@
 
     </script>
 
+
 </body>
 
 </html>
-```
