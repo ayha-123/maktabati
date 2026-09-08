@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تاريخنا أولاً - مكتبتي الإلكترونية</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Tahoma, sans-serif;
+            background: #eef2f7;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+            margin: 25px auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            background: #243b55;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .book {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,.08);
+        }
+
+        .cover {
+            width: 190px;
+            height: 260px;
+            background: #dce3eb;
+            border-radius: 12px;
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 65px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #243b55;
+            font-size: 30px;
+            margin: 5px 0 10px;
+        }
+
+        .author {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            line-height: 2;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .price-box {
+            background: #fff8ed;
+            border: 1px solid #f0d7ad;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .price-label {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .price {
+            color: #e65100;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 7px;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #243b55;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .buy-btn:hover {
+            opacity: .9;
+        }
+
+        .favorite-btn {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            background: #f1f3f5;
+            color: #243b55;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .info {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .info-item {
+            background: #f7f9fb;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #243b55;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .stars {
+            font-size: 28px;
+            letter-spacing: 4px;
+        }
+
+        .rating p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .notice {
+            margin-top: 25px;
+            padding: 16px;
+            background: #fff3cd;
+            border-radius: 10px;
+            color: #664d03;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media(max-width:600px) {
+
+            .book {
+                padding: 18px;
+            }
+
+            .cover {
+                width: 170px;
+                height: 230px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>📚 مكتبتي الإلكترونية</h1>
+
+    <p>
+        تفاصيل الكتاب
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <a href="books.html" class="back">
+        ← العودة إلى الكتب
+    </a>
+
+
+    <div class="book">
+
+
+        <div class="cover">
+            📚
+        </div>
+
+
+        <span class="badge">
+            💰 كتاب مدفوع
+        </span>
+
+
+        <h2>
+            تاريخنا أولاً
+        </h2>
+
+
+        <div class="author">
+            تأليف: أيهم حيدر حاكم
+        </div>
+
+
+        <div class="description">
+
+            كتاب <strong>«تاريخنا أولاً»</strong> يتناول تاريخ العراق
+            والحضارات بأسلوب سردي، ويقدم رحلة عبر عدد من الحضارات
+            والأحداث التاريخية.
+
+        </div>
+
+
+        <div class="price-box">
+
+            <div class="price-label">
+                سعر الكتاب
+            </div>
+
+            <div class="price">
+                3,500 دينار عراقي
+            </div>
+
+        </div>
+
+
+        <button class="buy-btn" onclick="buyBook()">
+            💰 شراء الكتاب
+        </button>
+
+
+        <button class="favorite-btn" onclick="addFavorite()">
+            ❤️ إضافة إلى المفضلة
+        </button>
+
+
+        <div class="info">
+
+            <div class="info-item">
+                <strong>اسم الكتاب</strong>
+                تاريخنا أولاً
+            </div>
+
+            <div class="info-item">
+                <strong>المؤلف</strong>
+                أيهم حيدر حاكم
+            </div>
+
+            <div class="info-item">
+                <strong>اللغة</strong>
+                العربية
+            </div>
+
+            <div class="info-item">
+                <strong>نوع الكتاب</strong>
+                كتاب إلكتروني
+            </div>
+
+            <div class="info-item">
+                <strong>صيغة الملف</strong>
+                PDF
+            </div>
+
+            <div class="info-item">
+                <strong>السعر</strong>
+                3,500 دينار عراقي
+            </div>
+
+            <div class="info-item">
+                <strong>التصنيف</strong>
+                تاريخ وحضارات
+            </div>
+
+            <div class="info-item">
+                <strong>تاريخ الإضافة</strong>
+                2026
+            </div>
+
+        </div>
+
+
+        <div class="rating">
+
+            <div class="stars">
+                ☆ ☆ ☆ ☆ ☆
+            </div>
+
+            <p>
+                نظام التقييم التفاعلي سيُضاف لاحقًا.
+            </p>
+
+        </div>
+
+
+        <div class="notice">
+
+            🔒 هذا الكتاب من المحتوى المدفوع.
+            بعد إتمام عملية الشراء سيتمكن المستخدم من
+            الوصول إلى نظام القراءة الإلكتروني المحمي.
+            سيتم إضافة نظام الدفع والحسابات والحماية
+            في المرحلة القادمة.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+function buyBook() {
+
+    alert(
+        "💰 سعر الكتاب: 3,500 دينار عراقي\n\n" +
+        "سيتم تفعيل نظام شراء الكتاب والدفع الإلكتروني لاحقًا."
+    );
+
+}
+
+
+function addFavorite() {
+
+    alert(
+        "❤️ تمت إضافة الكتاب إلى المفضلة"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
