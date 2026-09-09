@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +7,366 @@
     <title>تاريخنا أولاً - مكتبتي الإلكترونية</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            font-family: Arial, Tahoma, sans-serif;
-            background: #eef2f7;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
             color: #222;
         }
 
         header {
-            background: #243b55;
+            background: #1f2937;
             color: white;
             text-align: center;
-            padding: 28px 15px;
+            padding: 30px 15px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 28px;
+            margin: 0 0 10px;
+            font-size: 30px;
         }
 
         header p {
-            margin: 10px 0 0;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .back {
+            display: inline-block;
+            background: white;
+            color: #1f2937;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .book {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .cover {
+            width: 220px;
+            height: 300px;
+            margin: 0 auto 25px;
+            background: #e5e7eb;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 70px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 5px 0 10px;
+        }
+
+        .author {
+            color: #555;
+            font-size: 17px;
+        }
+
+        .description {
+            line-height: 2;
+            color: #444;
+            margin-top: 25px;
+        }
+
+        .price {
+            margin-top: 25px;
+            background: #fff7ed;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .button {
+            border: none;
+            padding: 13px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
             font-size: 16px;
+        }
+
+        .buy {
+            background: #16a34a;
+            color: white;
+        }
+
+        .favorite {
+            background: #f3f4f6;
+            color: #222;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .info div {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .rating {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .stars {
+            font-size: 30px;
+            letter-spacing: 5px;
+        }
+
+        .rating p {
+            color: #666;
+        }
+
+        .notice {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff7ed;
+            border-radius: 12px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .book {
+                padding: 20px;
+            }
+
+            .cover {
+                width: 180px;
+                height: 250px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 مكتبتي الإلكترونية</h1>
+    <p>تفاصيل الكتاب</p>
+</header>
+
+<div class="container">
+
+    <a href="books.html" class="back">
+        ⬅️ العودة إلى الكتب
+    </a>
+
+    <div class="book">
+
+        <div class="cover">
+            📚
+        </div>
+
+        <span class="badge">
+            💰 كتاب مدفوع
+        </span>
+
+        <h2>
+            تاريخنا أولاً
+        </h2>
+
+        <div class="author">
+            تأليف: أيهم حيدر حاكم
+        </div>
+
+        <div class="description">
+            كتاب «تاريخنا أولاً» يتناول تاريخ العراق والحضارات
+            بأسلوب سردي، ويقدم رحلة عبر عدد من الحضارات
+            والأحداث التاريخية.
+        </div>
+
+        <div class="price">
+            💰 3,500 دينار عراقي
+        </div>
+
+        <div class="actions">
+
+            <button class="button buy" onclick="buyBook()">
+                💰 شراء الكتاب
+            </button>
+
+            <button class="button favorite" onclick="addFavorite()">
+                ❤️ إضافة إلى المفضلة
+            </button>
+
+        </div>
+
+        <div class="info">
+
+            <div>
+                <strong>اسم الكتاب</strong><br>
+                تاريخنا أولاً
+            </div>
+
+            <div>
+                <strong>المؤلف</strong><br>
+                أيهم حيدر حاكم
+            </div>
+
+            <div>
+                <strong>اللغة</strong><br>
+                العربية
+            </div>
+
+            <div>
+                <strong>نوع الكتاب</strong><br>
+                كتاب إلكتروني
+            </div>
+
+            <div>
+                <strong>صيغة الملف</strong><br>
+                PDF
+            </div>
+
+            <div>
+                <strong>السعر</strong><br>
+                3,500 دينار عراقي
+            </div>
+
+            <div>
+                <strong>التصنيف</strong><br>
+                تاريخ وحضارات
+            </div>
+
+            <div>
+                <strong>تاريخ الإضافة</strong><br>
+                2026
+            </div>
+
+        </div>
+
+        <div class="rating">
+
+            <h3>
+                ⭐ تقييم الكتاب
+            </h3>
+
+            <div class="stars">
+                ☆ ☆ ☆ ☆ ☆
+            </div>
+
+            <p>
+                نظام التقييم التفاعلي سيُضاف لاحقًا.
+            </p>
+
+        </div>
+
+        <div class="notice">
+            🔒 <strong>المحتوى المدفوع</strong><br>
+            سيتم لاحقًا ربط هذا الكتاب بنظام الحسابات
+            والدفع الإلكتروني والقارئ المحمي، بحيث يستطيع
+            المستخدم الوصول إلى الكتاب بعد إتمام عملية الشراء.
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 مكتبتي الإلكترونية</p>
+</footer>
+
+<script>
+
+function buyBook() {
+
+    alert(
+        "💰 سعر الكتاب: 3,500 دينار عراقي\n\n" +
+        "سيتم تفعيل نظام شراء الكتاب والدفع الإلكتروني لاحقًا."
+    );
+
+}
+
+function addFavorite() {
+
+    alert(
+        "❤️ تمت إضافة الكتاب إلى المفضلة"
+    );
+
+}
+
+</script>
+
+</body>
+</html>            font-size: 16px;
         }
 
         .container {
