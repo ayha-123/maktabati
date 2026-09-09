@@ -1,40 +1,194 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>الملازم الدراسية - مكتبتي الإلكترونية</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
             color: #222;
         }
 
         header {
-            background: #243b55;
+            background: #1f2937;
             color: white;
-            padding: 35px 20px;
             text-align: center;
+            padding: 30px 15px;
         }
 
         header h1 {
             margin: 0 0 10px;
-            font-size: 32px;
+            font-size: 30px;
         }
 
         header p {
             margin: 0;
-            font-size: 17px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .back {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #1f2937;
+            padding: 10px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .back:hover {
+            background: #e5e7eb;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .section-title h2 {
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .handout-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        .handout-card h3 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .handout-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .notice {
+            background: #eef2ff;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .notice h3 {
+            margin-top: 0;
+        }
+
+        .notice p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #1f2937;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .handout-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 الملازم الدراسية</h1>
+    <p>ملازم دراسية لمختلف المراحل والتخصصات</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back">⬅️ العودة للرئيسية</a>
+
+    <div class="section-title">
+        <h2>📚 الملازم المتوفرة</h2>
+        <p>تصفح الملازم الدراسية الموجودة في المكتبة</p>
+    </div>
+
+    <div class="handout-card">
+        <div class="icon">🎓</div>
+
+        <h3>ملازم دراسية</h3>
+
+        <p>
+            ستتم إضافة الملازم الدراسية هنا قريبًا،
+            مع إمكانية تصنيفها حسب المرحلة الدراسية والمادة والتخصص.
+        </p>
+
+        <span class="badge">قريبًا</span>
+    </div>
+
+    <div class="notice">
+        <div style="font-size: 50px;">📖</div>
+
+        <h3>المكتبة قيد الإضافة</h3>
+
+        <p>
+            سيتم إضافة الملازم الدراسية تدريجيًا،
+            ويمكن لاحقًا ترتيبها حسب الصف والمادة والمرحلة،
+            لتسهيل الوصول إلى الملزمة المطلوبة.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 مكتبتي الإلكترونية</p>
+</footer>
+
+</body>
+</html>            font-size: 17px;
         }
 
         .back {
