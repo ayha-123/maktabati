@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>الكتب - مكتبتي الإلكترونية</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -35,6 +37,436 @@
             font-size: 16px;
         }
 
+        .container {
+            width: 92%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            background: #243b55;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            direction: rtl;
+        }
+
+        .search-box button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .section-title {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+        }
+
+        .section-title h2 {
+            margin: 0;
+            color: #243b55;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .cover {
+            width: 140px;
+            height: 190px;
+            background: #dce3eb;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+            flex-shrink: 0;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .free {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .paid {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .book-info h3 {
+            margin: 5px 0 8px;
+            color: #243b55;
+            font-size: 24px;
+        }
+
+        .author {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 12px;
+            color: #e65100;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 11px 20px;
+            background: #243b55;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        .no-results {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: #777;
+            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media(max-width:600px) {
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .book-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cover {
+                width: 160px;
+                height: 210px;
+            }
+
+            .book-info h3 {
+                font-size: 22px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>📚 الكتب</h1>
+
+    <p>
+        تصفح الكتب المتوفرة في مكتبتي الإلكترونية
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <a href="index.html" class="back">
+        ← العودة إلى الرئيسية
+    </a>
+
+
+    <!-- البحث -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث عن كتاب أو مؤلف..."
+            onkeyup="searchBooks()"
+        >
+
+        <button onclick="searchBooks()">
+            🔍 بحث
+        </button>
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            📚 جميع الكتب
+        </h2>
+
+    </div>
+
+
+    <!-- حكمت اليوم -->
+
+    <div
+        class="book-card"
+        data-title="حكمت اليوم"
+        data-author="أيهم حيدر حاكم"
+    >
+
+        <div class="cover">
+            📖
+        </div>
+
+
+        <div class="book-info">
+
+            <span class="badge free">
+                🆓 مجاني
+            </span>
+
+
+            <h3>
+                حكمت اليوم
+            </h3>
+
+
+            <div class="author">
+                تأليف: أيهم حيدر حاكم
+            </div>
+
+
+            <div class="description">
+
+                كتاب يضم مجموعة من الحكم والأفكار والعبارات
+                للتأمل والاستفادة في الحياة اليومية.
+
+            </div>
+
+
+            <a href="book12.html" class="btn">
+                📖 عرض الكتاب
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- تاريخنا أولاً -->
+
+    <div
+        class="book-card"
+        data-title="تاريخنا أولاً"
+        data-author="أيهم حيدر حاكم"
+    >
+
+        <div class="cover">
+            📚
+        </div>
+
+
+        <div class="book-info">
+
+            <span class="badge paid">
+                💰 مدفوع
+            </span>
+
+
+            <h3>
+                تاريخنا أولاً
+            </h3>
+
+
+            <div class="author">
+                تأليف: أيهم حيدر حاكم
+            </div>
+
+
+            <div class="description">
+
+                كتاب يتناول تاريخ العراق والحضارات
+                بأسلوب سردي، ويقدم رحلة عبر عدد من الحضارات
+                والأحداث التاريخية.
+
+            </div>
+
+
+            <div class="price">
+                💰 3,500 دينار عراقي
+            </div>
+
+
+            <a href="book13.html" class="btn">
+                📖 عرض الكتاب
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- لا توجد نتائج -->
+
+    <div id="noResults" class="no-results">
+
+        🔎 لم نجد نتائج مطابقة لبحثك.
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+function searchBooks() {
+
+    var text = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    var books = document.querySelectorAll(".book-card");
+
+    var found = false;
+
+
+    books.forEach(function(book) {
+
+        var title = book
+            .getAttribute("data-title")
+            .toLowerCase();
+
+        var author = book
+            .getAttribute("data-author")
+            .toLowerCase();
+
+
+        if (
+            text === "" ||
+            title.includes(text) ||
+            author.includes(text)
+        ) {
+
+            book.style.display = "flex";
+
+            found = true;
+
+        } else {
+
+            book.style.display = "none";
+
+        }
+
+    });
+
+
+    var message =
+        document.getElementById("noResults");
+
+
+    if (found) {
+
+        message.style.display = "none";
+
+    } else {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
         .container {
             width: 92%;
             max-width: 1000px;
