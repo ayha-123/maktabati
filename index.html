@@ -2,11 +2,8 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>مكتبتي الإلكترونية</title>
 
@@ -18,23 +15,729 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
+            font-family: Arial, Tahoma, sans-serif;
+            background: #eef2f7;
             color: #222;
         }
 
         header {
             background: #243b55;
             color: white;
-            padding: 35px 20px;
             text-align: center;
+            padding: 35px 15px;
         }
 
         header h1 {
-            margin: 0 0 10px;
-            font-size: 32px;
+            margin: 0;
+            font-size: 30px;
         }
 
+        header p {
+            margin: 10px 0 0;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        .search-box {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            direction: rtl;
+        }
+
+        .search-box button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: #222;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+            transition: .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            color: #243b55;
+            margin: 8px 0;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media(max-width:600px) {
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        📚 مكتبتي الإلكترونية
+    </h1>
+
+    <p>
+        كتب وملازم دراسية في مكان واحد
+    </p>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- البحث -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث عن كتاب أو مؤلف أو قسم..."
+        >
+
+        <button onclick="searchSite()">
+            🔍 بحث
+        </button>
+
+    </div>
+
+
+    <!-- الأقسام -->
+
+    <div class="cards">
+
+
+        <a href="books.html" class="card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h2>
+                الكتب
+            </h2>
+
+            <p>
+                تصفح جميع الكتب الموجودة في المكتبة.
+            </p>
+
+        </a>
+
+
+        <a href="handouts.html" class="card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h2>
+                الملازم الدراسية
+            </h2>
+
+            <p>
+                ملازم دراسية لمختلف المراحل والتخصصات.
+            </p>
+
+        </a>
+
+
+        <a href="free.html" class="card">
+
+            <div class="icon">
+                🆓
+            </div>
+
+            <h2>
+                الكتب المجانية
+            </h2>
+
+            <p>
+                كتب ومحتويات مجانية متاحة للجميع.
+            </p>
+
+        </a>
+
+
+        <a href="paid.html" class="card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <h2>
+                المحتوى المدفوع
+            </h2>
+
+            <p>
+                الكتب والملازم المتوفرة للشراء.
+            </p>
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+function searchSite() {
+
+    var text = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    if (text === "") {
+
+        alert("🔎 اكتب شيئًا للبحث.");
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("حكمت") ||
+        text.includes("اليوم")
+    ) {
+
+        window.location.href = "book12.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("تاريخنا") ||
+        text.includes("تاريخ")
+    ) {
+
+        window.location.href = "book13.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("أيهم") ||
+        text.includes("ايهم") ||
+        text.includes("حاكم")
+    ) {
+
+        window.location.href = "books.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("كتاب") ||
+        text.includes("كتب")
+    ) {
+
+        window.location.href = "books.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("ملازم") ||
+        text.includes("ملزمة") ||
+        text.includes("دراسة") ||
+        text.includes("دراسية")
+    ) {
+
+        window.location.href = "handouts.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("مجاني") ||
+        text.includes("مجانية") ||
+        text.includes("مجاناً") ||
+        text.includes("مجانا")
+    ) {
+
+        window.location.href = "free.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("مدفوع") ||
+        text.includes("مدفوعة") ||
+        text.includes("شراء")
+    ) {
+
+        window.location.href = "paid.html";
+
+        return;
+
+    }
+
+
+    alert("🔎 لم نجد نتائج مطابقة لبحثك.");
+
+}
+
+
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            searchSite();
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            direction: rtl;
+        }
+
+        .search-box button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: #222;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+            transition: .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            color: #243b55;
+            margin: 8px 0;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media(max-width:600px) {
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        📚 مكتبتي الإلكترونية
+    </h1>
+
+    <p>
+        كتب وملازم دراسية في مكان واحد
+    </p>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- البحث -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث عن كتاب أو مؤلف أو قسم..."
+        >
+
+        <button onclick="searchSite()">
+            🔍 بحث
+        </button>
+
+    </div>
+
+
+    <!-- الأقسام -->
+
+    <div class="cards">
+
+
+        <a href="books.html" class="card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h2>
+                الكتب
+            </h2>
+
+            <p>
+                تصفح جميع الكتب الموجودة في المكتبة.
+            </p>
+
+        </a>
+
+
+        <a href="handouts.html" class="card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h2>
+                الملازم الدراسية
+            </h2>
+
+            <p>
+                ملازم دراسية لمختلف المراحل والتخصصات.
+            </p>
+
+        </a>
+
+
+        <a href="free.html" class="card">
+
+            <div class="icon">
+                🆓
+            </div>
+
+            <h2>
+                الكتب المجانية
+            </h2>
+
+            <p>
+                كتب ومحتويات مجانية متاحة للجميع.
+            </p>
+
+        </a>
+
+
+        <a href="paid.html" class="card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <h2>
+                المحتوى المدفوع
+            </h2>
+
+            <p>
+                الكتب والملازم المتوفرة للشراء.
+            </p>
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+function searchSite() {
+
+    var text = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    if (text === "") {
+
+        alert("🔎 اكتب شيئًا للبحث.");
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("حكمت") ||
+        text.includes("اليوم")
+    ) {
+
+        window.location.href = "book12.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("تاريخنا") ||
+        text.includes("تاريخ")
+    ) {
+
+        window.location.href = "book13.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("أيهم") ||
+        text.includes("ايهم") ||
+        text.includes("حاكم")
+    ) {
+
+        window.location.href = "books.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("كتاب") ||
+        text.includes("كتب")
+    ) {
+
+        window.location.href = "books.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("ملازم") ||
+        text.includes("ملزمة") ||
+        text.includes("دراسة") ||
+        text.includes("دراسية")
+    ) {
+
+        window.location.href = "handouts.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("مجاني") ||
+        text.includes("مجانية") ||
+        text.includes("مجاناً") ||
+        text.includes("مجانا")
+    ) {
+
+        window.location.href = "free.html";
+
+        return;
+
+    }
+
+
+    if (
+        text.includes("مدفوع") ||
+        text.includes("مدفوعة") ||
+        text.includes("شراء")
+    ) {
+
+        window.location.href = "paid.html";
+
+        return;
+
+    }
+
+
+    alert("🔎 لم نجد نتائج مطابقة لبحثك.");
+
+}
+
+
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            searchSite();
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
         header p {
             margin: 0;
             font-size: 17px;
