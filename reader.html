@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>قراءة حكمت اليوم - مكتبتي الإلكترونية</title>
+    <title>قارئ الكتب - مكتبتي الإلكترونية</title>
 
     <style>
         * {
@@ -13,176 +14,170 @@
 
         body {
             margin: 0;
-            font-family: Arial, Tahoma, sans-serif;
-            background: #eef2f7;
-            color: #222;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #111827;
+            color: white;
             user-select: none;
         }
 
         header {
-            background: #243b55;
-            color: white;
+            background: #1f2937;
+            padding: 20px 15px;
             text-align: center;
-            padding: 25px 15px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 26px;
+            margin: 0 0 8px;
+            font-size: 25px;
         }
 
         header p {
-            margin: 8px 0 0;
-            font-size: 15px;
-            opacity: 0.9;
+            margin: 0;
+            color: #d1d5db;
         }
 
-        .container {
-            width: 95%;
-            max-width: 1100px;
-            margin: 20px auto;
-        }
+        .topbar {
+            background: #374151;
+            padding: 12px 15px;
 
-        .top-bar {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 10px;
             flex-wrap: wrap;
         }
 
         .book-name {
+            font-size: 17px;
             font-weight: bold;
-            color: #243b55;
-            font-size: 18px;
         }
 
-        .back-btn {
-            display: inline-block;
+        .back {
             text-decoration: none;
-            background: #243b55;
-            color: white;
-            padding: 10px 16px;
+            background: #f3f4f6;
+            color: #111827;
+            padding: 9px 14px;
             border-radius: 8px;
         }
 
-        .back-btn:hover {
-            opacity: 0.9;
+        .reader-container {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
         }
 
         .reader {
             position: relative;
-            background: #d9dee5;
+
+            min-height: 650px;
+
+            background: white;
+            color: #222;
+
             border-radius: 12px;
-            padding: 15px;
-            min-height: 600px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 40px;
+
             overflow: hidden;
         }
 
         .reader-message {
-            min-height: 570px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
+            max-width: 600px;
         }
 
-        .reader-icon {
-            font-size: 65px;
-            margin-bottom: 15px;
+        .reader-message .icon {
+            font-size: 70px;
         }
 
         .reader-message h2 {
-            margin: 5px 0 10px;
-            color: #243b55;
+            margin: 15px 0;
         }
 
         .reader-message p {
-            max-width: 600px;
-            line-height: 1.8;
             color: #555;
-        }
-
-        .status {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border-radius: 20px;
-            font-size: 14px;
+            line-height: 1.9;
         }
 
         .watermark {
             position: absolute;
+
             top: 50%;
             left: 50%;
+
             transform: translate(-50%, -50%) rotate(-25deg);
-            font-size: 45px;
-            color: rgba(36, 59, 85, 0.07);
+
+            font-size: 35px;
+
+            color: rgba(0, 0, 0, 0.08);
+
             white-space: nowrap;
+
             pointer-events: none;
-            z-index: 10;
+        }
+
+        .status {
+            margin-top: 15px;
+
+            background: #1f2937;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            color: #d1d5db;
         }
 
         .warning {
-            background: #fff8e1;
-            border-right: 5px solid #f9a825;
-            padding: 15px;
             margin-top: 15px;
-            border-radius: 8px;
+
+            background: #78350f;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
             line-height: 1.8;
         }
 
-        .warning strong {
-            color: #8d6e00;
-        }
-
         footer {
-            margin-top: 30px;
-            background: #243b55;
-            color: white;
-            text-align: center;
+            margin-top: 40px;
+
+            background: #1f2937;
+
             padding: 20px;
-            font-size: 14px;
+
+            text-align: center;
+
+            color: #d1d5db;
         }
 
         @media (max-width: 600px) {
+
             header h1 {
-                font-size: 22px;
-            }
-
-            .top-bar {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-
-            .back-btn {
-                text-align: center;
+                font-size: 21px;
             }
 
             .reader {
-                padding: 8px;
-                min-height: 500px;
-            }
-
-            .reader-message {
-                min-height: 480px;
+                min-height: 550px;
+                padding: 25px;
             }
 
             .watermark {
-                font-size: 28px;
+                font-size: 22px;
+            }
+
+            .topbar {
+                justify-content: center;
+                text-align: center;
             }
         }
 
@@ -194,108 +189,111 @@
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <header>
-    <h1>📚 مكتبتي الإلكترونية</h1>
-    <p>قارئ الكتب الإلكتروني</p>
+
+    <h1>
+        📚 مكتبتي الإلكترونية
+    </h1>
+
+    <p>
+        قارئ الكتب الإلكتروني
+    </p>
+
 </header>
 
-<div class="container">
 
-    <div class="top-bar">
-        <div class="book-name">
-            📖 حكمت اليوم
-        </div>
+<div class="topbar">
 
-        <a href="book12.html" class="back-btn">
-            ← العودة إلى تفاصيل الكتاب
-        </a>
+    <div class="book-name">
+        📖 حكمت اليوم
     </div>
 
+    <a href="book12.html" class="back">
+        ⬅️ العودة للكتاب
+    </a>
+
+</div>
+
+
+<div class="reader-container">
+
     <div class="reader">
+
+        <div class="reader-message">
+
+            <div class="icon">
+                📖
+            </div>
+
+            <h2>
+                حكمت اليوم
+            </h2>
+
+            <p>
+                سيتم عرض صفحات الكتاب هنا بعد ربط ملف PDF
+                بنظام القراءة الإلكتروني.
+            </p>
+
+            <p>
+                يمكنك من هنا قراءة الكتاب داخل المكتبة
+                دون الحاجة إلى فتح ملف PDF بشكل مباشر.
+            </p>
+
+        </div>
 
         <div class="watermark">
             مكتبتي الإلكترونية - حكمت اليوم
         </div>
 
-        <div class="reader-message">
-
-            <div class="reader-icon">
-                📖
-            </div>
-
-            <h2>حكمت اليوم</h2>
-
-            <p>
-                أهلاً بك في قارئ مكتبتي الإلكترونية.
-                سيتم عرض صفحات الكتاب هنا بعد ربط ملف PDF
-                بنظام القراءة المحمي.
-            </p>
-
-            <span class="status">
-                🔒 القارئ المحمي قيد التجهيز
-            </span>
-
-        </div>
-
     </div>
 
+
+    <div class="status">
+        🔒 القارئ المحمي قيد التجهيز
+    </div>
+
+
     <div class="warning">
-        <strong>⚠️ تنبيه:</strong>
-        هذا المحتوى مخصص للقراءة داخل المكتبة الإلكترونية.
-        يمنع نسخ أو إعادة نشر محتوى الكتاب دون إذن صاحب الحقوق.
+        ⚠️
+        هذا القارئ مخصص لقراءة الكتب داخل المكتبة.
+        سيتم لاحقًا إضافة نظام حماية المحتوى،
+        العلامة المائية الديناميكية،
+        وربط القراءة بحساب المستخدم.
     </div>
 
 </div>
 
+
 <footer>
-    © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+
+    <p>
+        © 2026 مكتبتي الإلكترونية
+    </p>
+
 </footer>
 
 
 <script>
 
-    /* منع زر الفأرة الأيمن */
-    document.addEventListener("contextmenu", function(event) {
-        event.preventDefault();
-    });
-
-
-    /* منع بعض اختصارات النسخ والطباعة */
+    // منع بعض الاختصارات البسيطة
     document.addEventListener("keydown", function(event) {
 
-        /* Ctrl + C */
-        if (event.ctrlKey && event.key.toLowerCase() === "c") {
-            event.preventDefault();
-        }
-
-        /* Ctrl + P */
-        if (event.ctrlKey && event.key.toLowerCase() === "p") {
-            event.preventDefault();
-            alert("⚠️ الطباعة غير متاحة لهذا المحتوى.");
-        }
-
-        /* Ctrl + S */
-        if (event.ctrlKey && event.key.toLowerCase() === "s") {
-            event.preventDefault();
-            alert("⚠️ حفظ الصفحة غير متاح.");
-        }
-
-        /* Ctrl + U */
-        if (event.ctrlKey && event.key.toLowerCase() === "u") {
-            event.preventDefault();
-        }
-
-        /* F12 */
-        if (event.key === "F12") {
+        if (
+            event.key === "F12" ||
+            (event.ctrlKey && event.key === "u") ||
+            (event.ctrlKey && event.key === "s") ||
+            (event.ctrlKey && event.key === "p") ||
+            (event.ctrlKey && event.shiftKey && event.key === "I")
+        ) {
             event.preventDefault();
         }
 
     });
 
 
-    /* منع السحب */
+    // منع سحب المحتوى
     document.addEventListener("dragstart", function(event) {
         event.preventDefault();
     });
@@ -303,4 +301,5 @@
 </script>
 
 </body>
+
 </html>
