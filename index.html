@@ -316,8 +316,107 @@
 
 <script>
 
+    <script>
+
     async function signInWithGitHub() {
 
+        console.log("🔵 بدأ تسجيل الدخول بواسطة GitHub");
+
+        try {
+
+            if (!supabaseClient) {
+
+                alert("❌ Supabase غير متصل بالموقع.");
+
+                console.error(
+                    "supabaseClient غير موجود"
+                );
+
+                return;
+            }
+
+
+            console.log(
+                "🟢 Supabase Client موجود"
+            );
+
+
+            const result =
+                await supabaseClient.auth.signInWithOAuth({
+
+                    provider: "github",
+
+                    options: {
+
+                        redirectTo:
+                            "https://ayha-123.github.io/maktabati/"
+
+                    }
+
+                });
+
+
+            console.log(
+                "📦 نتيجة Supabase:",
+                result
+            );
+
+
+            const { data, error } = result;
+
+
+            if (error) {
+
+                console.error(
+                    "🔴 خطأ Supabase:",
+                    error
+                );
+
+                alert(
+                    "❌ خطأ تسجيل الدخول:\n\n" +
+                    error.message
+                );
+
+                return;
+            }
+
+
+            if (data && data.url) {
+
+                console.log(
+                    "🟢 تم إنشاء رابط GitHub:",
+                    data.url
+                );
+
+                window.location.href =
+                    data.url;
+
+                return;
+            }
+
+
+            console.log(
+                "⚠️ لم يتم الحصول على رابط تسجيل الدخول."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "🔴 الخطأ الحقيقي:",
+                error
+            );
+
+            alert(
+                "❌ خطأ تسجيل الدخول:\n\n" +
+                (error.message ||
+                 error.toString())
+            );
+
+        }
+
+    }
+
+</script>
         try {
 
             const { data, error } =
