@@ -296,14 +296,18 @@
 
 <script>
 
-    const SUPABASE_URL = https://zerxdoeatjsbyldnfgmw.supabase.co/rest/v1/
-    const SUPABASE_PUBLISHABLE_KEY = sb_publishable_a2AJaPQARh3mqxgMKTvJWQ_rLQvBUrx
+    const SUPABASE_URL =
+        "https://zerxdoeatjsbyldnfgmw.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_a2AJaPQARh3mqxgMKTvJWQ_rLQvBUrx";
 
 
-    const supabaseClient = supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_PUBLISHABLE_KEY
-    );
+    const supabaseClient =
+        supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
 
 </script>
 
@@ -485,15 +489,18 @@
 
     document
         .getElementById("searchInput")
-        .addEventListener("keydown", function(event) {
+        .addEventListener(
+            "keydown",
+            function(event) {
 
-            if (event.key === "Enter") {
+                if (event.key === "Enter") {
 
-                searchSite();
+                    searchSite();
+
+                }
 
             }
-
-        });
+        );
 
 </script>
 
