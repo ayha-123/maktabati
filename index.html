@@ -65,7 +65,6 @@
             border-radius: 12px;
             margin-bottom: 25px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
-
             display: flex;
             gap: 10px;
         }
@@ -179,8 +178,6 @@
 
 <div class="container">
 
-    <!-- البحث -->
-
     <div class="search-box">
 
         <input
@@ -196,11 +193,7 @@
     </div>
 
 
-    <!-- الأقسام -->
-
     <div class="cards">
-
-        <!-- الكتب -->
 
         <a href="books.html" class="card">
 
@@ -219,8 +212,6 @@
         </a>
 
 
-        <!-- الملازم -->
-
         <a href="handouts.html" class="card">
 
             <div class="icon">
@@ -238,8 +229,6 @@
         </a>
 
 
-        <!-- المجاني -->
-
         <a href="free.html" class="card">
 
             <div class="icon">
@@ -256,8 +245,6 @@
 
         </a>
 
-
-        <!-- المدفوع -->
 
         <a href="paid.html" class="card">
 
@@ -287,7 +274,7 @@
 </footer>
 
 
-<!-- مكتبة Supabase -->
+<!-- Supabase -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -302,7 +289,6 @@
     const SUPABASE_PUBLISHABLE_KEY =
         "sb_publishable_a2AJaPQARh3mqxgMKTvJWQ_rLQvBUrx";
 
-
     const supabaseClient =
         supabase.createClient(
             SUPABASE_URL,
@@ -315,8 +301,6 @@
 <!-- تسجيل الدخول بواسطة GitHub -->
 
 <script>
-
-    <script>
 
     async function signInWithGitHub() {
 
@@ -384,8 +368,7 @@
             if (data && data.url) {
 
                 console.log(
-                    "🟢 تم إنشاء رابط GitHub:",
-                    data.url
+                    "🟢 تم إنشاء رابط GitHub"
                 );
 
                 window.location.href =
@@ -417,47 +400,6 @@
     }
 
 </script>
-        try {
-
-            const { data, error } =
-                await supabaseClient.auth.signInWithOAuth({
-
-                    provider: "github",
-
-                    options: {
-
-                        redirectTo:
-                            "https://ayha-123.github.io/maktabati/"
-
-                    }
-
-                });
-
-
-            if (error) {
-
-                console.error(error);
-
-                alert(
-                    "❌ حدث خطأ أثناء تسجيل الدخول:\n\n" +
-                    error.message
-                );
-
-            }
-
-        } catch (error) {
-
-            console.error(error);
-
-            alert(
-                "❌ حدث خطأ غير متوقع أثناء تسجيل الدخول."
-            );
-
-        }
-
-    }
-
-</script>
 
 
 <!-- البحث -->
@@ -478,7 +420,6 @@
             alert("🔎 اكتب شيئًا للبحث.");
 
             return;
-
         }
 
 
@@ -491,7 +432,6 @@
                 "book12.html";
 
             return;
-
         }
 
 
@@ -504,7 +444,6 @@
                 "book13.html";
 
             return;
-
         }
 
 
@@ -518,7 +457,6 @@
                 "books.html";
 
             return;
-
         }
 
 
@@ -531,7 +469,6 @@
                 "books.html";
 
             return;
-
         }
 
 
@@ -546,7 +483,6 @@
                 "handouts.html";
 
             return;
-
         }
 
 
@@ -561,7 +497,6 @@
                 "free.html";
 
             return;
-
         }
 
 
@@ -575,7 +510,6 @@
                 "paid.html";
 
             return;
-
         }
 
 
