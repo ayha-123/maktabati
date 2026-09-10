@@ -147,6 +147,20 @@
 
     <p>كتب وملازم دراسية في مكان واحد</p>
 
+    <button
+        onclick="signInWithGitHub()"
+        style="
+            margin-top: 15px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        "
+    >
+        🐙 تسجيل الدخول بحساب GitHub
+    </button>
+
 </header>
 
 <div class="container">
@@ -337,13 +351,28 @@ document
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "ضع Project URL هنا";
-    const SUPABASE_PUBLISHABLE_KEY = "ضع Publishable key هنا";
+    const SUPABASE_URL = https://zerxdoeatjsbyldnfgmw.supabase.co/rest/v1/
+    const SUPABASE_PUBLISHABLE_KEY = sb_publishable_a2AJaPQARh3mqxgMKTvJWQ_rLQvBUrx
 
     const supabaseClient = supabase.createClient(
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
     );
+
+      async function signInWithGitHub() {
+
+    const { error } = await supabaseClient.auth.signInWithOAuth({
+        provider: "github",
+        options: {
+            redirectTo: "https://ayha-123.github.io/maktabati/"
+        }
+    });
+
+    if (error) {
+        alert("حدث خطأ أثناء تسجيل الدخول: " + error.message);
+    }
+
+}
 </script>  
 </body>
 
