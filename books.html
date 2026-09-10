@@ -8,33 +8,420 @@
     <title>الكتب - مكتبتي الإلكترونية</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            font-family: Arial, Tahoma, sans-serif;
-            background: #eef2f7;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
             color: #222;
         }
 
         header {
-            background: #243b55;
+            background: #1f2937;
             color: white;
             text-align: center;
-            padding: 28px 15px;
+            padding: 30px 15px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 28px;
+            margin: 0 0 10px;
+            font-size: 30px;
         }
 
         header p {
-            margin: 10px 0 0;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 16px;
+            background: white;
+            color: #243b55;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .search-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
             font-size: 16px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #243b55;
+            color: white;
+            padding: 13px 20px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 160px;
+            margin: 0 auto 18px;
+            background: #e5e7eb;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 48px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .free {
+            background: #16a34a;
+        }
+
+        .paid {
+            background: #dc2626;
+        }
+
+        .book-card h3 {
+            margin: 8px 0;
+            font-size: 22px;
+        }
+
+        .book-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #b45309;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 18px;
+            background: #243b55;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+        }
+
+        .no-results {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>📚 الكتب</h1>
+
+    <p>
+        تصفح الكتب المتوفرة في مكتبتي الإلكترونية
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <a href="index.html" class="back">
+        ⬅️ العودة للرئيسية
+    </a>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 ابحث عن كتاب أو مؤلف..."
+        >
+
+        <button onclick="searchBooks()">
+            بحث
+        </button>
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            📚 جميع الكتب
+        </h2>
+
+        <p>
+            الكتب الموجودة حاليًا في المكتبة
+        </p>
+
+    </div>
+
+
+    <div class="books" id="booksList">
+
+
+        <!-- حكمت اليوم -->
+
+        <div
+            class="book-card"
+            data-title="حكمت اليوم"
+            data-author="أيهم حيدر حاكم"
+        >
+
+            <div class="book-cover">
+                📖
+            </div>
+
+            <span class="badge free">
+                🆓 مجاني
+            </span>
+
+            <h3>
+                حكمت اليوم
+            </h3>
+
+            <p>
+                تأليف: أيهم حيدر حاكم
+            </p>
+
+            <p>
+                كتاب يضم مجموعة من الحكم والأفكار والعبارات
+                للتأمل والاستفادة في الحياة اليومية.
+            </p>
+
+            <a href="book12.html" class="button">
+                📖 عرض الكتاب
+            </a>
+
+        </div>
+
+
+        <!-- تاريخنا أولاً -->
+
+        <div
+            class="book-card"
+            data-title="تاريخنا أولاً"
+            data-author="أيهم حيدر حاكم"
+        >
+
+            <div class="book-cover">
+                📚
+            </div>
+
+            <span class="badge paid">
+                💰 مدفوع
+            </span>
+
+            <h3>
+                تاريخنا أولاً
+            </h3>
+
+            <p>
+                تأليف: أيهم حيدر حاكم
+            </p>
+
+            <p>
+                كتاب يتناول تاريخ العراق والحضارات بأسلوب سردي،
+                ويقدم رحلة عبر عدد من الحضارات والأحداث التاريخية.
+            </p>
+
+            <p class="price">
+                💰 3,500 دينار عراقي
+            </p>
+
+            <a href="book13.html" class="button">
+                📖 عرض الكتاب
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+
+        🔍 لم يتم العثور على كتاب مطابق للبحث.
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
+    </p>
+
+</footer>
+
+
+<script>
+
+function searchBooks() {
+
+    const input = document.getElementById("searchInput");
+
+    const searchText = input.value.trim().toLowerCase();
+
+    const books = document.querySelectorAll(".book-card");
+
+    const noResults = document.getElementById("noResults");
+
+    let found = false;
+
+
+    if (searchText === "") {
+
+        books.forEach(function(book) {
+            book.style.display = "block";
+        });
+
+        noResults.style.display = "none";
+
+        return;
+    }
+
+
+    books.forEach(function(book) {
+
+        const title = book.dataset.title.toLowerCase();
+
+        const author = book.dataset.author.toLowerCase();
+
+
+        if (
+            title.includes(searchText) ||
+            author.includes(searchText)
+        ) {
+
+            book.style.display = "block";
+
+            found = true;
+
+        } else {
+
+            book.style.display = "none";
+
+        }
+
+    });
+
+
+    if (found) {
+
+        noResults.style.display = "none";
+
+    } else {
+
+        noResults.style.display = "block";
+
+    }
+
+}
+
+
+document.getElementById("searchInput").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            searchBooks();
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>            font-size: 16px;
         }
 
         .container {
