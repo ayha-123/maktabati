@@ -37,6 +37,22 @@
             font-size: 17px;
         }
 
+        .login-button {
+            margin-top: 18px;
+            padding: 13px 24px;
+            border: none;
+            border-radius: 9px;
+            background: white;
+            color: #243b55;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .login-button:hover {
+            opacity: 0.9;
+        }
+
         .container {
             width: 92%;
             max-width: 1000px;
@@ -48,7 +64,7 @@
             padding: 18px;
             border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
 
             display: flex;
             gap: 10px;
@@ -86,7 +102,7 @@
             text-align: center;
             text-decoration: none;
             color: #222;
-            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
             transition: .2s;
         }
 
@@ -119,7 +135,7 @@
             font-size: 14px;
         }
 
-        @media(max-width:600px) {
+        @media (max-width: 600px) {
 
             .search-box {
                 flex-direction: column;
@@ -143,27 +159,27 @@
 
 <header>
 
-    <h1>📚 مكتبتي الإلكترونية</h1>
+    <h1>
+        📚 مكتبتي الإلكترونية
+    </h1>
 
-    <p>كتب وملازم دراسية في مكان واحد</p>
+    <p>
+        كتب وملازم دراسية في مكان واحد
+    </p>
 
     <button
+        class="login-button"
         onclick="signInWithGitHub()"
-        style="
-            margin-top: 15px;
-            padding: 12px 22px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        "
     >
         🐙 تسجيل الدخول بحساب GitHub
     </button>
 
 </header>
 
+
 <div class="container">
+
+    <!-- البحث -->
 
     <div class="search-box">
 
@@ -179,13 +195,22 @@
 
     </div>
 
+
+    <!-- الأقسام -->
+
     <div class="cards">
+
+        <!-- الكتب -->
 
         <a href="books.html" class="card">
 
-            <div class="icon">📚</div>
+            <div class="icon">
+                📚
+            </div>
 
-            <h2>الكتب</h2>
+            <h2>
+                الكتب
+            </h2>
 
             <p>
                 تصفح جميع الكتب الموجودة في المكتبة.
@@ -193,11 +218,18 @@
 
         </a>
 
+
+        <!-- الملازم -->
+
         <a href="handouts.html" class="card">
 
-            <div class="icon">🎓</div>
+            <div class="icon">
+                🎓
+            </div>
 
-            <h2>الملازم الدراسية</h2>
+            <h2>
+                الملازم الدراسية
+            </h2>
 
             <p>
                 ملازم دراسية لمختلف المراحل والتخصصات.
@@ -205,11 +237,18 @@
 
         </a>
 
+
+        <!-- المجاني -->
+
         <a href="free.html" class="card">
 
-            <div class="icon">🆓</div>
+            <div class="icon">
+                🆓
+            </div>
 
-            <h2>الكتب المجانية</h2>
+            <h2>
+                الكتب المجانية
+            </h2>
 
             <p>
                 كتب ومحتويات مجانية متاحة للجميع.
@@ -217,11 +256,18 @@
 
         </a>
 
+
+        <!-- المدفوع -->
+
         <a href="paid.html" class="card">
 
-            <div class="icon">💰</div>
+            <div class="icon">
+                💰
+            </div>
 
-            <h2>المحتوى المدفوع</h2>
+            <h2>
+                المحتوى المدفوع
+            </h2>
 
             <p>
                 الكتب والملازم المتوفرة للشراء.
@@ -233,147 +279,225 @@
 
 </div>
 
+
 <footer>
 
     © 2026 مكتبتي الإلكترونية - جميع الحقوق محفوظة
 
 </footer>
 
-<script>
 
-function searchSite() {
-
-    var text = document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
-
-    if (text === "") {
-
-        alert("🔎 اكتب شيئًا للبحث.");
-
-        return;
-    }
-
-    if (
-        text.includes("حكمت") ||
-        text.includes("اليوم")
-    ) {
-
-        window.location.href = "book12.html";
-
-        return;
-    }
-
-    if (
-        text.includes("تاريخنا") ||
-        text.includes("تاريخ")
-    ) {
-
-        window.location.href = "book13.html";
-
-        return;
-    }
-
-    if (
-        text.includes("أيهم") ||
-        text.includes("ايهم") ||
-        text.includes("حاكم")
-    ) {
-
-        window.location.href = "books.html";
-
-        return;
-    }
-
-    if (
-        text.includes("كتاب") ||
-        text.includes("كتب")
-    ) {
-
-        window.location.href = "books.html";
-
-        return;
-    }
-
-    if (
-        text.includes("ملازم") ||
-        text.includes("ملزمة") ||
-        text.includes("دراسة") ||
-        text.includes("دراسية")
-    ) {
-
-        window.location.href = "handouts.html";
-
-        return;
-    }
-
-    if (
-        text.includes("مجاني") ||
-        text.includes("مجانية") ||
-        text.includes("مجاناً") ||
-        text.includes("مجانا")
-    ) {
-
-        window.location.href = "free.html";
-
-        return;
-    }
-
-    if (
-        text.includes("مدفوع") ||
-        text.includes("مدفوعة") ||
-        text.includes("شراء")
-    ) {
-
-        window.location.href = "paid.html";
-
-        return;
-    }
-
-    alert("🔎 لم نجد نتائج مطابقة لبحثك.");
-}
-
-document
-    .getElementById("searchInput")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-
-            searchSite();
-
-        }
-
-    });
-
-</script>
+<!-- مكتبة Supabase -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
+
+
+<!-- إعداد Supabase -->
+
+<script>
+
     const SUPABASE_URL = https://zerxdoeatjsbyldnfgmw.supabase.co/rest/v1/
     const SUPABASE_PUBLISHABLE_KEY = sb_publishable_a2AJaPQARh3mqxgMKTvJWQ_rLQvBUrx
+
 
     const supabaseClient = supabase.createClient(
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
     );
 
-      async function signInWithGitHub() {
+</script>
 
-    const { error } = await supabaseClient.auth.signInWithOAuth({
-        provider: "github",
-        options: {
-            redirectTo: "https://ayha-123.github.io/maktabati/"
+
+<!-- تسجيل الدخول بواسطة GitHub -->
+
+<script>
+
+    async function signInWithGitHub() {
+
+        try {
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithOAuth({
+
+                    provider: "github",
+
+                    options: {
+
+                        redirectTo:
+                            "https://ayha-123.github.io/maktabati/"
+
+                    }
+
+                });
+
+
+            if (error) {
+
+                console.error(error);
+
+                alert(
+                    "❌ حدث خطأ أثناء تسجيل الدخول:\n\n" +
+                    error.message
+                );
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "❌ حدث خطأ غير متوقع أثناء تسجيل الدخول."
+            );
+
         }
-    });
 
-    if (error) {
-        alert("حدث خطأ أثناء تسجيل الدخول: " + error.message);
     }
 
-}
-</script>  
+</script>
+
+
+<!-- البحث -->
+
+<script>
+
+    function searchSite() {
+
+        var text = document
+            .getElementById("searchInput")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+        if (text === "") {
+
+            alert("🔎 اكتب شيئًا للبحث.");
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("حكمت") ||
+            text.includes("اليوم")
+        ) {
+
+            window.location.href =
+                "book12.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("تاريخنا") ||
+            text.includes("تاريخ")
+        ) {
+
+            window.location.href =
+                "book13.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("أيهم") ||
+            text.includes("ايهم") ||
+            text.includes("حاكم")
+        ) {
+
+            window.location.href =
+                "books.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("كتاب") ||
+            text.includes("كتب")
+        ) {
+
+            window.location.href =
+                "books.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("ملازم") ||
+            text.includes("ملزمة") ||
+            text.includes("دراسة") ||
+            text.includes("دراسية")
+        ) {
+
+            window.location.href =
+                "handouts.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("مجاني") ||
+            text.includes("مجانية") ||
+            text.includes("مجاناً") ||
+            text.includes("مجانا")
+        ) {
+
+            window.location.href =
+                "free.html";
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("مدفوع") ||
+            text.includes("مدفوعة") ||
+            text.includes("شراء")
+        ) {
+
+            window.location.href =
+                "paid.html";
+
+            return;
+
+        }
+
+
+        alert(
+            "🔎 لم نجد نتائج مطابقة لبحثك."
+        );
+
+    }
+
+
+    document
+        .getElementById("searchInput")
+        .addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+
+                searchSite();
+
+            }
+
+        });
+
+</script>
+
+
 </body>
 
 </html>
